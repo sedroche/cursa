@@ -1,0 +1,153 @@
+body , html{
+  height: 100%;
+}
+
+h1 
+{
+  font-style:italic;
+  font-size:120%;
+  border-bottom: thin solid #DEDEDE;
+}
+h2 
+{
+  font-size:110%;
+  border-bottom: thin solid #DEDEDE;
+}
+h3 
+{
+  font-size:100%;
+  border-bottom: thin solid #DEDEDE;
+}
+
+#footer
+{
+  margin-top:30px;
+  border-top: thin solid #DEDEDE;
+}
+
+#title 
+{
+  font-size:120%;
+  color: black;
+  padding-right: 1em;
+
+}
+
+.background-white
+{
+  background-color : white;
+}
+
+	
+#footer{
+  position: relative;
+  margin-top: -52px; /* negative value of footer height */
+  clear:both;
+  font-size:70%;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  background-color: #E0E0E0;
+  border-bottom-color: 1px solid #CACACA;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pcopy{
+    margin-top: 20px;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+/**
+ * 	content
+ */
+#content{
+    margin-top: 4.5em;
+    margin-bottom: 3em;
+    text-align: justify;
+    text-justify: inter-word;
+    overflow:auto;
+    padding-bottom:50px; /* this needs to be bigger than footer height*/ 
+}
+
+/*
+* Topic pages and module pages
+*/
+
+/**
+* lists
+*/
+.no-bullet {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.bordertop{
+   border-top-style:solid;
+   border-top-width: thin;
+   border-color: #DEDEDE;
+}
+
+.margin{
+   margin: 1em 1em 1em 1em;
+}
+
+.margin-not-bottom{
+   margin: 1em 1em 0em 1em;
+}
+
+.border-bottom{
+   border-bottom-style:solid;
+   border-bottom-width: thin;
+   border-color: #DEDEDE;
+}
+
+.padding{
+   padding: 2em 2em 2em 2em;
+}
+
+.border{
+   border-style:solid;
+   border-width: thin;
+   border-color: #DEDEDE;
+}
+
+.emmargin{
+    margin: 2em 2em 2em 2em;
+}
+
+.moduleli{
+	border-bottom-width: 2px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,0.1) 0 1px 3px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+}
+
+#container {
+  min-height: 100%;
+}
+
+#labtitle{
+   padding: 20px 20px 20px 20px;
+   background-color: #FFFFFF;
+   margin: 0 0 0 0;
+   text-align: right;
+   z-index: 2;
+}
+
+th, td
+{
+  padding: 0 0 0 2em;
+}
+
+table
+{
+  margin: 2em 2em 2em 2em;
+}

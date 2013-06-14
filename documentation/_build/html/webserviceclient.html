@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class WebServiceClient &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Module view" href="view.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="view.html" title="Module view"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="class-webserviceclient">
+<h1><tt class="xref py py-mod docutils literal"><span class="pre">Class</span> <span class="pre">WebServiceClient</span></tt><a class="headerlink" href="#class-webserviceclient" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-dom.webserviceclient"></span><p>Created on 11 Apr 2013</p>
+<p>Author: John Roche</p>
+<dl class="class">
+<dt id="dom.webserviceclient.WebServiceClient">
+<em class="property">class </em><tt class="descclassname">dom.webserviceclient.</tt><tt class="descname">WebServiceClient</tt><a class="headerlink" href="#dom.webserviceclient.WebServiceClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>classdocs</p>
+<dl class="attribute">
+<dt id="dom.webserviceclient.WebServiceClient.moodleaddress">
+<tt class="descname">moodleaddress</tt><em class="property"> = 'http://127.0.0.1:8080/moodle/'</em><a class="headerlink" href="#dom.webserviceclient.WebServiceClient.moodleaddress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dom.webserviceclient.WebServiceClient.send_resource">
+<tt class="descname">send_resource</tt><big>(</big><em>webservice_params</em>, <em>filepath=None</em><big>)</big><a class="headerlink" href="#dom.webserviceclient.WebServiceClient.send_resource" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends a resource to Moodle.</div>
+<div class="line">This function uses the custom clarity plugin</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first simple">
+<li>webservice_params (dict):</li>
+</ul>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><blockquote class="first">
+<div><div class="line-block">
+<div class="line">&#8216;courseid&#8217;:  The course id,</div>
+<div class="line">&#8216;sectionid&#8217;:  The section id,</div>
+<div class="line">&#8216;type&#8217;:  file, label,</div>
+<div class="line">&#8216;displayname&#8217;:  The name beside the resource,</div>
+<div class="line">&#8216;mainfile&#8217;:  The main file. To be used with folder to create
+lab or presentation,</div>
+<div class="line">&#8216;mainfilepath&#8217;:  The path to the main file from the root of
+the folder. Must start and end with /,</div>
+<div class="line">&#8216;labeltext&#8217;:  The label text,</div>
+<div class="line">&#8216;labeltextformat&#8217;:  The label text format. markdown or html,</div>
+</div>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="view.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Module</span> <span class="pre">view</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/webserviceclient.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="view.html" title="Module view"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

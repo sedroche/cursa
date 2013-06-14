@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class topic &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Class Lab" href="lab.html" />
+    <link rel="prev" title="Class module" href="module.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lab.html" title="Class Lab"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="module.html" title="Class module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dom.topic">
+<span id="class-topic"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Class</span> <span class="pre">topic</span></tt><a class="headerlink" href="#module-dom.topic" title="Permalink to this headline">¶</a></h1>
+<p>Created on Oct 20, 2012</p>
+<p>Author: John Roche</p>
+<dl class="class">
+<dt id="dom.topic.Topic">
+<em class="property">class </em><tt class="descclassname">dom.topic.</tt><tt class="descname">Topic</tt><big>(</big><em>topicmeta=None</em><big>)</big><a class="headerlink" href="#dom.topic.Topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<div class="line-block">
+<div class="line">The Topic class is responsible for creating the file structure for the
+topic and the orchestration of a build of a Topic</div>
+<div class="line">A Topic consists of a collection of Labs and is responsible for the
+management of the Labs in the TOPIC.</div>
+</div>
+<dl class="method">
+<dt id="dom.topic.Topic._build_labs">
+<tt class="descname">_build_labs</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._build_labs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of each lab in the Topic.</div>
+<div class="line">This involves invoking the build() method of each lab.
+Check the documentation for a description of the
+Lab.build() method</div>
+<div class="line">Each lab object has the lab.src attribute set to
+point to the first html page in lab</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._clean">
+<tt class="descname">_clean</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._clean" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete any files from a previous build of the lab</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._copy_assets">
+<tt class="descname">_copy_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._copy_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Copy CSS and JavaScript files used in the Topic.</div>
+<div class="line">The files will be copied to the assets subfolder</div>
+</div>
+<p>of the Topic HTML folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._copy_pres_assets">
+<tt class="descname">_copy_pres_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._copy_pres_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Copy CSS and JavaScript files used in the HTML presentations</div>
+<div class="line">The files will be copied to the assets subfolder</div>
+</div>
+<p>of the presentation HTML folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_index">
+<tt class="descname">_create_index</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_index" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates the index.html page that will be the</div>
+</div>
+<p>interface to the topic.
+| This method uses the generate module to create the html page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_lab_objects">
+<tt class="descname">_create_lab_objects</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_lab_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the Lab objects from the meta data which should have been
+configured in the index.yaml file for this topic.</p>
+<dl class="docutils">
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_pres_info">
+<tt class="descname">_create_pres_info</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_pres_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a Markdown string that has the links</div>
+</div>
+<p>to the HTML presentation and the PDF presentation</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>String containing Markdown links to the HTML presentations and
+the PDF presentations or an empty string if there are no
+presentations in the topic</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_topic_dirs">
+<tt class="descname">_create_topic_dirs</tt><big>(</big><em>modulename</em>, <em>topicname</em>, <em>rich</em><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_topic_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the directories for the topic.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_topic_md">
+<tt class="descname">_create_topic_md</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_topic_md" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates the index.md file that will be used</div>
+</div>
+<p>to generate the index.html interface to the Topic
+| This method uses the generate module to create the html page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._create_topic_yaml_template">
+<tt class="descname">_create_topic_yaml_template</tt><big>(</big><em>module</em>, <em>topic</em>, <em>title</em><big>)</big><a class="headerlink" href="#dom.topic.Topic._create_topic_yaml_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a YAML file with a template that
+contains the default Topic structure</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>module(str):  The name of the module</li>
+<li>topic (str):  The name of the topic</li>
+<li>title (str):  The title of the Topic</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._get_pres_css_assets">
+<tt class="descname">_get_pres_css_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._get_pres_css_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a List of the CSS assets needed for a</div>
+</div>
+<p>presentation</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>List of CSS assets</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._get_pres_js_assets">
+<tt class="descname">_get_pres_js_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._get_pres_js_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a List of the Javascript assets needed for a</div>
+</div>
+<p>presentation</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>List of Javascript assets</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._pres_text">
+<tt class="descname">_pres_text</tt><big>(</big><em>pres_meta</em><big>)</big><a class="headerlink" href="#dom.topic.Topic._pres_text" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a PDF presentation of the markdown input</div>
+<div class="line">This method uses the generate module to create the PDF
+presentation</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>pres_meta (dict):  Contains the meta data to create the</dt>
+<dd><p class="first last">presentation text</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._presentation">
+<tt class="descname">_presentation</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._presentation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML presentation of the markdown input</div>
+<div class="line">This method uses the generate module to create the presentation</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._push_index">
+<tt class="descname">_push_index</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._push_index" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the Topic outline to Moodle.</div>
+<div class="line">The outline is sent as a label resource.</div>
+<div class="line">The label content is specified the Topic index.md file</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._push_labs">
+<tt class="descname">_push_labs</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._push_labs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the push of each lab in the Topic.</div>
+<div class="line">This involves invoking the push() method of each lab.</div>
+</div>
+<p>Check the documentation for a description of the
+Lab.push() method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._push_pdf_presentation">
+<tt class="descname">_push_pdf_presentation</tt><big>(</big><em>pres</em><big>)</big><a class="headerlink" href="#dom.topic.Topic._push_pdf_presentation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends a PDF presentation as a resource to Moodle</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._push_presentation">
+<tt class="descname">_push_presentation</tt><big>(</big><em>pres</em><big>)</big><a class="headerlink" href="#dom.topic.Topic._push_presentation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends a HTML presentation as a resource to Moodle</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic._scaffold_labs">
+<tt class="descname">_scaffold_labs</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic._scaffold_labs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the scaffolding of each lab in the Topic.</div>
+<div class="line">This involves invoking the scaffold() method of each lab.</div>
+</div>
+<p>Check the documentation for a description of the
+Lab.scaffold() method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic.build">
+<tt class="descname">build</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic.build" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of a full Topic.</div>
+<div class="line">This involves invoking the self._create_lab_objects(),</div>
+</div>
+<p>self._build_labs(), self._create_index() and
+self._presentation methods
+Check the documentation for a description of these
+methods</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic.push">
+<tt class="descname">push</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.topic.Topic.push" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the Topic to a Moodle LMS using a Web service.</div>
+<div class="line">The HTML presentation, the PDF version of the presentation
+and and all the labs are sent.</div>
+<div class="line">To use this functionality the clarity plugin for
+Moodle must be installed in your Moodle site</div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>Raises:</dt>
+<dd>ValueError</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.topic.Topic.scaffold">
+<tt class="descname">scaffold</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#dom.topic.Topic.scaffold" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the scaffolding of the Topic.</div>
+<div class="line">This involves creating the directories for the Topic,
+and creating a sample YAML file for the Topic</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>config (dict):  config should have the</dt>
+<dd><blockquote class="first">
+<div><p>structure:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><blockquote class="first">
+<div><div class="line-block">
+<div class="line">&#8216;name&#8217;:</div>
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;module&#8217;:</div>
+<div class="line">&#8216;rich&#8217;:</div>
+</div>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<ul class="last">
+<li><p class="first">name: The name of the lab</p>
+</li>
+<li><p class="first">title: The title of the lab</p>
+</li>
+<li><p class="first">module: Which module the lab belongs to</p>
+</li>
+<li><dl class="first docutils">
+<dt>rich: Whether the topic index.html will have images and</dt>
+<dd><p class="first last">multimedia content</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="module.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">module</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lab.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">Lab</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/topic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lab.html" title="Class Lab"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="module.html" title="Class module"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

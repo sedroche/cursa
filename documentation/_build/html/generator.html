@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Module generator &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Module utils" href="utils.html" />
+    <link rel="prev" title="Class step" href="step.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Module utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="step.html" title="Class step"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dom.generator">
+<span id="module-generator"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Module</span> <span class="pre">generator</span></tt><a class="headerlink" href="#module-dom.generator" title="Permalink to this headline">¶</a></h1>
+<p>Created on Nov 29, 2012</p>
+<p>Author: John Roche</p>
+<div class="line-block">
+<div class="line">The generator module is a facade between the cursa application</div>
+<div class="line">and the output generation modules, tools and applications that cursa uses to
+create the output from the content files</div>
+</div>
+<dl class="function">
+<dt id="dom.generator._create_lab_html">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_create_lab_html</tt><big>(</big><em>steps</em>, <em>labpath</em><big>)</big><a class="headerlink" href="#dom.generator._create_lab_html" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Parses the content from each step in the list steps into HTML</div>
+</div>
+<p>and combines the HTML into one String</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>steps (List): Contains the meta data about all steps in</dt>
+<dd><p class="first last">the lab</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">labpath (str): file path to Lab</p>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>(str): Generated HTML from Markdown of the combined steps in the</dt>
+<dd><p class="first last">lab</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._create_pdf">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_create_pdf</tt><big>(</big><em>args</em>, <em>data</em><big>)</big><a class="headerlink" href="#dom.generator._create_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a PDF from a string containing HTML</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>args (List):  The list of arguments to the wkhtmltopdf</dt>
+<dd><p class="first last">application</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">data (str): The HTML string</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_lab_text">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_lab_text</tt><big>(</big><em>labparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_lab_text" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a PDF file that contains the combined content</div>
+</div>
+<p>of all the steps in a lab</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>labparams (dict):  labparams should have the</dt>
+<dd><blockquote class="first">
+<div><p>structure:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;steps&#8217;:</div>
+<div class="line">&#8216;labpath&#8217;:</div>
+<div class="line">&#8216;css&#8217;:</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="last">
+<li><p class="first">title (str): Name of the PDF file</p>
+</li>
+<li><dl class="first docutils">
+<dt>steps (List): Contains the meta data about all steps in</dt>
+<dd><p class="first last">the lab</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">labpath (str): file path to Lab</p>
+</li>
+<li><p class="first">css (List): List of CSS assets for the lab</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_module">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_module</tt><big>(</big><em>moduleparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_module" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML file, index.html, that is the</div>
+</div>
+<p>interface to the module.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">moduleparams (dict):  moduleparams should have the structure:</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;modulepath&#8217;:</div>
+<div class="line">&#8216;topiclinks&#8217;:</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul>
+<li><p class="first">title: Title of the module</p>
+</li>
+<li><p class="first">modulepath: Path to Module</p>
+</li>
+<li><dl class="first docutils">
+<dt>topiclinks: Hypertext links to each topic in the</dt>
+<dd><p class="first last">module</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_pres">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_pres</tt><big>(</big><em>topicparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_pres" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML presentation</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">topicparams (dict):  topicparams should have the structure:</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;content&#8217;:</div>
+<div class="line">&#8216;prespath&#8217;:</div>
+<div class="line">&#8216;css&#8217;:</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul class="simple">
+<li>title of the topic</li>
+<li>content: The content file name</li>
+<li>prespath: Path to presentations folder</li>
+<li>css: The CSS for the presentation</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_pres_text">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_pres_text</tt><big>(</big><em>topicparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_pres_text" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a PDF version of a HTML presentation</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">topicparams (dict):  topicparams should have the structure:</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;content&#8217;:</div>
+<div class="line">&#8216;prespath&#8217;</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul class="simple">
+<li>title of the topic</li>
+<li>content: The content file name</li>
+<li>prespath: Path to presentations folder</li>
+<li>css: The CSS for the presentation text</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_step">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_step</tt><big>(</big><em>stepparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_step" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML file that contains the content</div>
+</div>
+<p>stored in the Markdown file</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>stepparams (dict):  stepparams should have the</dt>
+<dd><blockquote class="first">
+<div><p>structure:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;labpath&#8217;:</div>
+<div class="line">&#8216;navbar&#8217;:</div>
+<div class="line">&#8216;css&#8217; :</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="last simple">
+<li>title: Name of Markdown file</li>
+<li>labpath: Path to Lab containing step</li>
+<li>navbar: Navigation bar for the Lab</li>
+<li>css: The css for the step</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._do_topic">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_do_topic</tt><big>(</big><em>topicparams</em><big>)</big><a class="headerlink" href="#dom.generator._do_topic" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML file - index.html - that is the</div>
+</div>
+<p>interface to the topic.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">topicparams (dict):  topicparams should have the structure:</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;content&#8217;:</div>
+<div class="line">&#8216;topicpath&#8217;:</div>
+<div class="line">&#8216;topicinfo&#8217;:</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul>
+<li><p class="first">title: Title of the topic,</p>
+</li>
+<li><p class="first">content: The content file name,</p>
+</li>
+<li><p class="first">topicpath: Path to topic,</p>
+</li>
+<li><dl class="first docutils">
+<dt>topicinfo: markdown with info about the labs</dt>
+<dd><p class="first last">and presenations in the topic</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._generate_html">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_generate_html</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#dom.generator._generate_html" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Generates a HTML string from a Markdown string</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>content (Unicode str):  Markdown content</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(Unicode str): HTML form of the Markdown content</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._make_imageurls_absolute">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_make_imageurls_absolute</tt><big>(</big><em>content</em>, <em>labpath</em><big>)</big><a class="headerlink" href="#dom.generator._make_imageurls_absolute" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Changes any Markdown image syntax with a relative src</div>
+</div>
+<p>to an absolute src</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div><blockquote>
+<div>e.g.</div></blockquote>
+<p>![](../img/image.png)</p>
+<p>will be replaced with</p>
+<p>![](absolute/path/to/img/image.png)</p>
+</div></blockquote>
+<dl class="last docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>content (str):  The Markdown content</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(str): The content with img src set to absolute path</li>
+</ul>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._parse_markdown">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_parse_markdown</tt><big>(</big><em>md_location</em><big>)</big><a class="headerlink" href="#dom.generator._parse_markdown" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Parses Markdown that will be converted to HTML</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>md_location (str):  File name with file path to location of</dt>
+<dd><p class="first last">the Markdown file</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(str): Generated HTML from Markdown</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._parse_pres_markdown">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_parse_pres_markdown</tt><big>(</big><em>md</em><big>)</big><a class="headerlink" href="#dom.generator._parse_pres_markdown" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Parses Markdown that will be converted to a HTML Presentation</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Cursa Presentation Markdown has new syntax delimiting the
+start and end of a presentation slide.</div>
+<div class="line">The new delimiting syntax is 3 equal signs, e.g.
+===</div>
+</div>
+<blockquote>
+<div><p>##Standard Markdown here</p>
+<p>===</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Equal signs are replaced with HTML section tags, e.g.</div>
+</div>
+<blockquote>
+<div><p>&lt;section class=&#8221;slide&#8221;&gt;</p>
+<p>&lt;h2&gt;Standard Markdown here&lt;/h2&gt;</p>
+<p>&lt;/section&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="last docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>md (str):  The markdown content</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(str): Generated HTML from Markdown</li>
+</ul>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._remove_output_dest">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_remove_output_dest</tt><big>(</big><em>output_dest</em><big>)</big><a class="headerlink" href="#dom.generator._remove_output_dest" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Remove the file at the path</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._untar_macosx_directory">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_untar_macosx_directory</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.generator._untar_macosx_directory" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Before a call to wkhtmltopdf on OSX can be made,</div>
+</div>
+<p>some dependencies need to be extracted from archive.
+| This is becuse PyInstaller does not allow directories to be bundled</p>
+<blockquote>
+<div>into the executable so an archive of the directory was bundled</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator._write_view_to_file">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">_write_view_to_file</tt><big>(</big><em>file_to_create</em>, <em>data</em><big>)</big><a class="headerlink" href="#dom.generator._write_view_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a file and writes data to that file.</div>
+<div class="line">This function uses codecs.open() and ensures
+  unicode compatability.
+| data must be a string, not Binary data</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>file_to_create (str):  File name with file path</li>
+<li>data (str):  The data to write to the file</li>
+</ul>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.generator.generate">
+<tt class="descclassname">dom.generator.</tt><tt class="descname">generate</tt><big>(</big><em>stepparams=None</em>, <em>labparams=None</em>, <em>topicparams=None</em>, <em>moduleparams=None</em><big>)</big><a class="headerlink" href="#dom.generator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">This function is the single public method that the system can
+use to interact the output generation modules.</div>
+<div class="line">generate will decide what action to take based on the parameters passed
+and create the output.</div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>stepparams (Dict): A dictionary object containing the</dt>
+<dd><p class="first last">params for the Step.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>labparams (Dict): A dictionary object containing the</dt>
+<dd><p class="first last">params for the Lab.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>topicparams (Dict): A dictionary object containing the</dt>
+<dd><p class="first">params for the Topic.
+topicparams should have a key named &#8216;category&#8217;
+which indicates which output to create
+valid entries for category are;</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>&#8216;index&#8217;</li>
+<li>&#8216;text&#8217;</li>
+<li>&#8216;pres_text&#8217;</li>
+<li>&#8216;label&#8217;</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>moduleparams (Dict): A dictionary object containing the</dt>
+<dd><p class="first last">params for the Topic.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="step.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Class</span> <span class="pre">step</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">Module</span> <span class="pre">utils</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/generator.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Module utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="step.html" title="Class step"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

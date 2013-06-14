@@ -1,0 +1,18 @@
+#ignore pyc files
+*.pyc
+src/test_data/
+test_data/
+build/
+lab/
+markdown/
+assets/
+pyinstaller-2.0/
+dist/
+.coverage
+.pydevproject
+.project
+cursa.spec~
+DATA/qt_menu.nib/
+DATA/qt_menu.nib/*
+cover/
+*~

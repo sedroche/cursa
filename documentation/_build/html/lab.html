@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class Lab &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Class step" href="step.html" />
+    <link rel="prev" title="Class topic" href="topic.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="step.html" title="Class step"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="topic.html" title="Class topic"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dom.lab">
+<span id="class-lab"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Class</span> <span class="pre">Lab</span></tt><a class="headerlink" href="#module-dom.lab" title="Permalink to this headline">¶</a></h1>
+<p>Created on Oct 20, 2012</p>
+<p>Author: John Roche</p>
+<dl class="class">
+<dt id="dom.lab.Lab">
+<em class="property">class </em><tt class="descclassname">dom.lab.</tt><tt class="descname">Lab</tt><big>(</big><em>labmeta=None</em><big>)</big><a class="headerlink" href="#dom.lab.Lab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<div class="line-block">
+<div class="line">The Lab class is responsible for creating the file structure for a Lab
+and the orchestration of a build of a Lab.</div>
+<div class="line">A Lab consists of a collection of Steps and is responsible for the
+management of the Steps in the Lab.</div>
+</div>
+<dl class="method">
+<dt id="dom.lab.Lab._build_steps">
+<tt class="descname">_build_steps</tt><big>(</big><em>css</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._build_steps" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Builds each step in the lab.</div>
+</div>
+<dl class="docutils">
+<dt>The outcome of a call to this method should</dt>
+<dd>result in HTML output from the Markdown files</dd>
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>css (list):  The css to use in the step</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._clean">
+<tt class="descname">_clean</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._clean" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete any files from a previous build of the lab</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._copy_assets">
+<tt class="descname">_copy_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._copy_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Copy CSS and JavaScript files used in the Lab.</div>
+<div class="line">The files will be copied to the assets subfolder</div>
+</div>
+<p>of the Lab HTML folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._copy_steps_to_path">
+<tt class="descname">_copy_steps_to_path</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._copy_steps_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Copies all the steps in the lab to a new path, along with all CSS,</div>
+</div>
+<p>JS, archives, and images</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_lab_dirs">
+<tt class="descname">_create_lab_dirs</tt><big>(</big><em>modulename</em>, <em>topicname</em>, <em>labname</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_lab_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create the directories for the Lab.</div>
+<div class="line">If the path has not been declared the path will be created</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>modulename (str):  The name of the module</li>
+<li>topicname (str):  The name of the topic</li>
+<li>labname (str):  The name of the lab</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_lab_info">
+<tt class="descname">_create_lab_info</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_lab_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates the lab info</div>
+</div>
+<dl class="docutils">
+<dt>Returns (dict):</dt>
+<dd><dl class="first last docutils">
+<dt>Lab info containing:</dt>
+<dd><ul class="first last simple">
+<li>Markdown from the first step</li>
+<li>Markdown link to the first step</li>
+<li>Markdown link to the pdf</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_lab_yaml_template">
+<tt class="descname">_create_lab_yaml_template</tt><big>(</big><em>module</em>, <em>topic</em>, <em>lab</em>, <em>title</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_lab_yaml_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a YAML file with a template that
+contains the default Lab structure</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>module(str):  The name of the module</li>
+<li>topic (str):  The name of the topic</li>
+<li>lab (str):  The name of the lab</li>
+<li>title (str):  The title of the lab</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_md_templates">
+<tt class="descname">_create_md_templates</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_md_templates" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create sample markdown files for the Lab.</div>
+<div class="line">Files will contain the default template used.</div>
+<div class="line">The markdown files will take the names
+- Exercises.md
+- Objectives.md
+- RENAME-STEP.md</div>
+</div>
+<blockquote>
+<div>and will be stored in the md folder of
+the Lab directory structure</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_nav_bar">
+<tt class="descname">_create_nav_bar</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_nav_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the HTML Navigation Bar for the Lab.
+Polls each Step in the Lab for the step list element.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>String representation of the Navigation Bar
+or empty string on fail</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_steps">
+<tt class="descname">_create_steps</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_steps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the Step objects</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._create_text">
+<tt class="descname">_create_text</tt><big>(</big><em>css</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._create_text" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a PDF file that contains the combined content</div>
+</div>
+<p>of all the steps in a lab
+| This method uses the generate module to create the PDF file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._get_mdfile_names">
+<tt class="descname">_get_mdfile_names</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._get_mdfile_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gathers markdown files in the md directory
+and uses the meta data from the files to create
+the Step meta data</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Method only to be used when creating output
+using the prefix approach.</p>
+</div>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>List (String) containing the markdown file names in the
+md folder of this lab</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._moodleify_lab">
+<tt class="descname">_moodleify_lab</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.lab.Lab._moodleify_lab" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Configures each step in the Lab for being pushed to Moodle</div>
+<div class="line">This involves changing local navigation links to navigation links
+that will work in the Moodle environment</div>
+<div class="line">The moodlyify() method of each step in the lab is invoked</div>
+<div class="line">Check the documentation for a description of this method</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._pushlabel">
+<tt class="descname">_pushlabel</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._pushlabel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the label resource to Moodle for this lab</div>
+<div class="line">The label is usually the first step in the lab
+- the objectives.md - which outlines the lab</div>
+</div>
+<dl class="docutils">
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._pushpdf">
+<tt class="descname">_pushpdf</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._pushpdf" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the PDF version of this lab as a resource to Moodle</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab._pushsteps">
+<tt class="descname">_pushsteps</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab._pushsteps" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the steps (HTML) version of this lab as a resource to Moodle</div>
+</div>
+<p>including all accompanying files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab.build">
+<tt class="descname">build</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab.build" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of the Lab.</div>
+<div class="line">This involves invoking the self._create_steps(),
+and self._build_steps() methods</div>
+<div class="line">Check the documentation for a description of these
+methods</div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>Returns (dict):</dt>
+<dd><dl class="first last docutils">
+<dt>Lab info containing:</dt>
+<dd><ul class="first last simple">
+<li>Markdown from the first step</li>
+<li>Markdown link to the first step</li>
+<li>Markdown link to the pdf</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab.push">
+<tt class="descname">push</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.lab.Lab.push" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Sends the lab to a Moodle LMS using a Web service.</div>
+<div class="line">The lab is sent as three resources.</div>
+<div class="line">The HTML steps, the PDF and a Label consisting of the objectives
+Markdown.</div>
+<div class="line">To use this functionality the clarity plugin for
+Moodle must be installed in your Moodle site</div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>Raises:</dt>
+<dd>ValueError</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.lab.Lab.scaffold">
+<tt class="descname">scaffold</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#dom.lab.Lab.scaffold" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the scaffolding of the Lab.</div>
+<div class="line">This involves creating the directories for the Lab,
+creating sample markdown files for the Lab and
+creating a sample YAML file for the Lab</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>config (dict):  config should have the</dt>
+<dd><blockquote class="first">
+<div><p>structure:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><blockquote class="first">
+<div><div class="line-block">
+<div class="line">&#8216;name&#8217;:</div>
+<div class="line">&#8216;title&#8217;:</div>
+<div class="line">&#8216;module&#8217;:</div>
+<div class="line">&#8216;topic&#8217;:</div>
+</div>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<ul class="last simple">
+<li>name: The name of the lab</li>
+<li>title: The title of the lab</li>
+<li>module: Which module the lab belongs to</li>
+<li>topic: Which topic the lab belongs to</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="topic.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Class</span> <span class="pre">topic</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="step.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">step</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/lab.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="step.html" title="Class step"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="topic.html" title="Class topic"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

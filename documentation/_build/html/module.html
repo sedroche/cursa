@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class module &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Class topic" href="topic.html" />
+    <link rel="prev" title="Class cursa" href="cursa.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="topic.html" title="Class topic"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cursa.html" title="Class cursa"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dom.module">
+<span id="class-module"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Class</span> <span class="pre">module</span></tt><a class="headerlink" href="#module-dom.module" title="Permalink to this headline">¶</a></h1>
+<p>Created on Jan 16, 2013</p>
+<p>Author: John Roche</p>
+<dl class="class">
+<dt id="dom.module.Module">
+<em class="property">class </em><tt class="descclassname">dom.module.</tt><tt class="descname">Module</tt><big>(</big><em>modulemeta=None</em><big>)</big><a class="headerlink" href="#dom.module.Module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<div class="line-block">
+<div class="line">The Module class is responsible for creating the file structure for a
+Module and the orchestration of a build of a Module.</div>
+<div class="line">A Module consists of a collection of Topics and is responsible for the
+management of the Topics in the Module.</div>
+</div>
+<dl class="method">
+<dt id="dom.module.Module._build_topics">
+<tt class="descname">_build_topics</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._build_topics" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of each Topic in the Module.</div>
+<div class="line">This involves invoking the build() method of each topic.</div>
+</div>
+<p>Check the documentation for a description of the
+Topic.build() method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._copy_assets">
+<tt class="descname">_copy_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._copy_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Copy CSS and JavaScript files used in the Module.</div>
+<div class="line">The files will be copied to the module assets folder</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._create_index">
+<tt class="descname">_create_index</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._create_index" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates the index.html page that will be the</div>
+</div>
+<p>interface to the module.
+| This method uses the generate module to create the html page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._create_module_dirs">
+<tt class="descname">_create_module_dirs</tt><big>(</big><em>modulename</em><big>)</big><a class="headerlink" href="#dom.module.Module._create_module_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create the directories for the Module.</div>
+<div class="line">If the path has not been declared the path will be created</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>modulename (str):  The name of the module</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._create_module_yaml_template">
+<tt class="descname">_create_module_yaml_template</tt><big>(</big><em>modulename</em>, <em>title</em><big>)</big><a class="headerlink" href="#dom.module.Module._create_module_yaml_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a YAML file with a template that
+contains the default Topic structure</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>module(str):  The name of the module</li>
+<li>title (str):  The title of the module</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._create_topic_links">
+<tt class="descname">_create_topic_links</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._create_topic_links" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a HTML Hypertext link for each topic in the module.</div>
+</div>
+<p>The links will be displayed in the index.html page created
+in topic._create_index().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._create_topic_objects">
+<tt class="descname">_create_topic_objects</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._create_topic_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the Topic objects from the meta data which should have been
+configured in the index.yaml file</p>
+<dl class="docutils">
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module._push_topics">
+<tt class="descname">_push_topics</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module._push_topics" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of each Topic in the Module.</div>
+<div class="line">This involves invoking the build() method of each topic.</div>
+</div>
+<p>Check the documentation for a description of the
+Topic.build() method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module.build">
+<tt class="descname">build</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module.build" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of a full Module.</div>
+<div class="line">This involves invoking the self.create_topic_objects(),
+self.build_topics() and self.create_index() methods</div>
+<div class="line-block">
+<div class="line">Check the documentation for a description of these
+methods</div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module.push">
+<tt class="descname">push</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.module.Module.push" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the build of a full Module.</div>
+<div class="line">This involves invoking the self.create_topic_objects(),
+self.build_topics() and self.create_index() methods</div>
+<div class="line">Check the documentation for a description of these
+methods</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dom.module.Module.scaffold">
+<tt class="descname">scaffold</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#dom.module.Module.scaffold" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Orchestrates the scaffolding of the Module.</div>
+<div class="line">This involves creating the directories for the Module,
+and creating a sample YAML file for the Module</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>config (dict):  config should have the</dt>
+<dd><blockquote class="first">
+<div><p>structure:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><div class="first last line-block">
+<div class="line">&#8216;name&#8217;:</div>
+<div class="line">&#8216;title&#8217;:</div>
+</div>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="last simple">
+<li>name: The name of the lab</li>
+<li>title: The title of the lab</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cursa.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">cursa</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="topic.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">topic</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/module.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="topic.html" title="Class topic"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cursa.html" title="Class cursa"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Module utils &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Class Build" href="build.html" />
+    <link rel="prev" title="Module generator" href="generator.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="build.html" title="Class Build"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="generator.html" title="Module generator"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dom.utils">
+<span id="module-utils"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Module</span> <span class="pre">utils</span></tt><a class="headerlink" href="#module-dom.utils" title="Permalink to this headline">¶</a></h1>
+<p>Created on Oct 20, 2012</p>
+<p>Author: John Roche</p>
+<blockquote>
+<div>The utils module contains a set of utility functions used in the system.</div></blockquote>
+<dl class="function">
+<dt id="dom.utils.clean">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">clean</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.utils.clean" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete all the files in the directory</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>path (Str):  The file path to the directory</li>
+</ul>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.clean_directories">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">clean_directories</tt><big>(</big><em>directories</em><big>)</big><a class="headerlink" href="#dom.utils.clean_directories" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete all the files in the list of directories</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>directories (List):  A list containing paths to the directories</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.copy_files">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">copy_files</tt><big>(</big><em>fileArray</em>, <em>dest</em><big>)</big><a class="headerlink" href="#dom.utils.copy_files" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates each file in the filearray to dest</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>fileArray (List):  List of files to copy</li>
+<li>dest (str): The destination path to copy the files to</li>
+</ul>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.create_course_info">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">create_course_info</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.utils.create_course_info" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create the course info for a Module, Topic or Lab,</div>
+</div>
+<p>from the given path
+| The course info defines what Module, Topic or Lab the</p>
+<blockquote>
+<div>current course section being built belongs to.</div></blockquote>
+<div class="line-block">
+<div class="line">The cursa path convention can be used to compute this info</div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>e.g.</dt>
+<dd><p class="first">Given a path;</p>
+<p>/cursahome/modulename/topics/topicname/labs/labname</p>
+<p>The course info;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>module: modulename,
+topic: topicname,
+lab: labname</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p class="last">can be computed from the path</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>path (str):  current working directory</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(dict): The course info</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.create_file">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">create_file</tt><big>(</big><em>filePath</em><big>)</big><a class="headerlink" href="#dom.utils.create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for creating a file.</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>filePath (String):</dt>
+<dd><div class="first last line-block">
+<div class="line">String indicating the file path
+to create.</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.create_files">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">create_files</tt><big>(</big><em>filePathArray</em><big>)</big><a class="headerlink" href="#dom.utils.create_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for creating multiple files.</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>filePathArray (Array):</dt>
+<dd><div class="first last line-block">
+<div class="line">String Array containing files paths
+to create.</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.create_push_params">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">create_push_params</tt><big>(</big><em>ob</em>, <em>resourcetype</em>, <em>displayname=''</em>, <em>mainfile=''</em>, <em>mainfilepath=''</em>, <em>labeltext=''</em>, <em>labeltextformat=''</em><big>)</big><a class="headerlink" href="#dom.utils.create_push_params" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">prepares the params for a push to the Moodle web service</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><p class="first">ob (Object):  The calling object, Module, Topic or Lab</p>
+</li>
+<li><p class="first">resourcetype (str): file or label</p>
+</li>
+<li><p class="first">displayname (str): The name beside the resource in Moodle</p>
+</li>
+<li><dl class="first docutils">
+<dt>mainfile (str): The file that will be linked to in Moodle</dt>
+<dd><p class="first last">This is usually the first step in the lab
+or the presentation HTML file</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">labeltext (str): The content for the label</p>
+</li>
+<li><p class="first">labelformat (str): HTML or markdown</p>
+</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>Dict of params</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.create_yaml_template">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">create_yaml_template</tt><big>(</big><em>path</em>, <em>template</em><big>)</big><a class="headerlink" href="#dom.utils.create_yaml_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for writing YAML template to a file</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>path (str):</dt>
+<dd><div class="first last line-block">
+<div class="line">Path to create the YAML file</div>
+</div>
+</dd>
+<dt>template (str):</dt>
+<dd><div class="first last line-block">
+<div class="line">Template to write to the YAML file</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.delete_files">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">delete_files</tt><big>(</big><em>filelist</em>, <em>path</em><big>)</big><a class="headerlink" href="#dom.utils.delete_files" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete all the filenames in filelist</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>filelist (List):  List containing the names of the files</li>
+<li>path (Str):  The file path to the directory</li>
+</ul>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.delete_tmpdir_and_archive">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">delete_tmpdir_and_archive</tt><big>(</big><em>archiveinfo</em><big>)</big><a class="headerlink" href="#dom.utils.delete_tmpdir_and_archive" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Deletes a temporary directory and an zip archive</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>archiveinfo (Dict):  Containing the zip path and temporary directory</dt>
+<dd><p class="first last">path</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.gather_file_names">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">gather_file_names</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.utils.gather_file_names" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Gather all the file names in the given path directory</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>path (str):  The file path to the directory</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(List): List of file names</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.get_css_assets">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">get_css_assets</tt><big>(</big><em>extra_css=None</em><big>)</big><a class="headerlink" href="#dom.utils.get_css_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a List of the basic CSS assets needed in a HTML page</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>extra_css (List):  List of extra css to add to the page</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>List of CSS assets</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.get_img_assets">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">get_img_assets</tt><big>(</big><em>extra_css</em><big>)</big><a class="headerlink" href="#dom.utils.get_img_assets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.get_js_assets">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">get_js_assets</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.utils.get_js_assets" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a List of the basic CSS assets needed in a HTML page</div>
+</div>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>List of Javascript assets</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.log">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">log</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#dom.utils.log" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Stub message for logging</div>
+<div class="line">Prints to stdout for now</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>msg (str):  A string to print to the user interface</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.make_dir">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">make_dir</tt><big>(</big><em>directory</em><big>)</big><a class="headerlink" href="#dom.utils.make_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for creating a directory</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>directory (String):</dt>
+<dd><div class="first last line-block">
+<div class="line">String indicating the directory path
+to create.</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.make_dirs">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">make_dirs</tt><big>(</big><em>directoryArray</em><big>)</big><a class="headerlink" href="#dom.utils.make_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for creating multiple directories</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>directoryArray (Array):</dt>
+<dd><div class="first last line-block">
+<div class="line">String Array containing the directory paths
+to create.</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.make_tmpdir_with_archive">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">make_tmpdir_with_archive</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#dom.utils.make_tmpdir_with_archive" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Creates a temporary directory and an zip archive
+of the temporary directory</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>path (str):  The file path to the directory</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(Dict): Containing the zip path and temporary directory path</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.read_data_from_file">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">read_data_from_file</tt><big>(</big><em>file_location</em><big>)</big><a class="headerlink" href="#dom.utils.read_data_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Reads data from a file.</div>
+<div class="line">This function uses codecs.open() and ensures
+  unicode compatability.
+| Function will only read from text files</div>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><ul class="first last simple">
+<li>file_location (str):  File name with file path</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>(str): The data from the file</li>
+</ul>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dom.utils.write_to_file">
+<tt class="descclassname">dom.utils.</tt><tt class="descname">write_to_file</tt><big>(</big><em>path</em>, <em>data</em><big>)</big><a class="headerlink" href="#dom.utils.write_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>utilty function for creating a file and writing data to the file</p>
+<dl class="docutils">
+<dt>args:</dt>
+<dd><dl class="first last docutils">
+<dt>path (str):</dt>
+<dd><div class="first last line-block">
+<div class="line">Path to create the file</div>
+</div>
+</dd>
+<dt>data (str):</dt>
+<dd><div class="first last line-block">
+<div class="line">Data to write to the YAML file</div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt>
+<dd>CursaException</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="generator.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Module</span> <span class="pre">generator</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="build.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">Class</span> <span class="pre">Build</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="build.html" title="Class Build"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="generator.html" title="Module generator"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

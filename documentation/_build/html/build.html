@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class Build &mdash; Cursa 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Cursa 1.0 documentation" href="index.html" />
+    <link rel="next" title="Class CommandLine" href="cli.html" />
+    <link rel="prev" title="Module utils" href="utils.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="Class CommandLine"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Module utils"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-ui.build">
+<span id="class-build"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">Class</span> <span class="pre">Build</span></tt><a class="headerlink" href="#module-ui.build" title="Permalink to this headline">¶</a></h1>
+<p>Created on 18 Jan 2013</p>
+<p>Author: John Roche</p>
+<dl class="class">
+<dt id="ui.build.Build">
+<em class="property">class </em><tt class="descclassname">ui.build.</tt><tt class="descname">Build</tt><a class="headerlink" href="#ui.build.Build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<div class="line-block">
+<div class="line">The Build class is an implementation of a command line interface command
+in the cursa application.</div>
+<div class="line">A command class is responsible for defining the command e.g. which
+switches and arguments the command can receive from the command line
+interface.</div>
+<div class="line">As a command class it has implemented a static setup(namespace) method
+and a call(namespace) method. The call(namespace) method must implement
+the functionality of the command from the command line interface.</div>
+<div class="line">The class attributes title (str) and help (str) must also be implemented</div>
+</div>
+<dl class="method">
+<dt id="ui.build.Build.call">
+<tt class="descname">call</tt><big>(</big><em>namespace</em><big>)</big><a class="headerlink" href="#ui.build.Build.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the functionality of the command from the command line
+interface.
+This is the public method that the CommandLine class invokes when
+instructed to perform a command.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ui.build.Build.help">
+<tt class="descname">help</tt><em class="property"> = 'Build from YAML file'</em><a class="headerlink" href="#ui.build.Build.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="ui.build.Build.setup">
+<em class="property">classmethod </em><tt class="descname">setup</tt><big>(</big><em>command_parser</em><big>)</big><a class="headerlink" href="#ui.build.Build.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the command.
+This method should define which switches and arguments the command
+can receive from the command line interface
+Registers the class with the CommandLine class by setting
+an attribute in the namespace returned from the parse_args
+method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ui.build.Build.title">
+<tt class="descname">title</tt><em class="property"> = 'build'</em><a class="headerlink" href="#ui.build.Build.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Module</span> <span class="pre">utils</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cli.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">Class</span> <span class="pre">CommandLine</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/build.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="Class CommandLine"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Module utils"
+             >previous</a> |</li>
+        <li><a href="index.html">Cursa 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John Roche.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
