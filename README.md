@@ -4,7 +4,7 @@
 ##Installation
 -------------
 
-1. git clone https://jrochebucket@bitbucket.org/jrochebucket/cursa.git
+1. git clone https://github.com/sedero/cursa.git
 
 2. Add cursa.py to your path
 
