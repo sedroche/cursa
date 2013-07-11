@@ -29,6 +29,11 @@
         $ sudo python setup.py install 
 	
 
+5. Finally, cursa uses the wkhtmltopdf application to create PDF output. In the wkhtmltopdf directory you will
+   find the wkhtmltopdf application for your platform - Linux, Mac OSx or Windows.
+   Put all the files in the directory labled with your platform into the DATA folder
+
+
 ##Tests
 ------
 
