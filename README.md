@@ -13,18 +13,21 @@
 
 3. Cursa has some dependencies that need to be installed
 
-	$ sudo pip install markdown
 
-	$ sudo pip install requests
+        $ sudo pip install markdown
+	 
+        $ sudo pip install requests
+	 
 
 4. PyYaml needs to be downloaded and manually installed
 
-	$ wget http://pyyaml.org/download/pyyaml/PyYAML-3.10.tar.gz
 
-	$ tar -xvzf PyYAML-3.10.tar.gz
-
-	$ sudo python setup.py install
-
+        $ wget http://pyyaml.org/download/pyyaml/PyYAML-3.10.tar.gz
+	 
+        $ tar -xvzf PyYAML-3.10.tar.gz
+	 
+        $ sudo python setup.py install 
+	
 
 ##Tests
 ------
