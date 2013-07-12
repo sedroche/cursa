@@ -155,7 +155,7 @@ def _do_lab_text(labparams):
                            labparams['title'],
                            '.pdf'])
 
-    args = ['wkhtmltopdf',
+    args = ['./wkhtmltopdf',
             '--quiet',
             'toc',
             '--xsl-style-sheet',
@@ -206,7 +206,7 @@ def _do_pres_text(topicparams):
                            topicparams['title'],
                            '.pdf'])
 
-    args = ['wkhtmltopdf',
+    args = ['./wkhtmltopdf',
             '--quiet',
             '--orientation',
             'landscape',

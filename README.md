@@ -33,6 +33,10 @@
    find the wkhtmltopdf application for your platform - Linux, Mac OSx or Windows.
    Put all the files in the directory labled with your platform into the DATA folder
 
+   You may need to make the application executable
+
+        $ chmod +x wkhtmltopdf
+
 
 ##Tests
 ------

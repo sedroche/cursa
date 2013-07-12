@@ -74,8 +74,8 @@ courseid    :
 sectionid   :
 displayname :
 highlight   :
-        - css : school_book.css
-          img : school_book.png
+        - css : github.css
+          img :
 steps:
         - markdown :
           title    :""".format(title or '')
