@@ -3,6 +3,7 @@
   font-size: 1.75em;
   background: #fff;
   background-color: #fff;
+  background-attachment: fixed;
   color: rgb(30, 30, 30) !important;
 }
 
@@ -14,8 +15,9 @@
 
 .wkhtmltopdf-slide {
 height: 266mm !important;
-padding: 1em !important;
+padding: 1em 1em 1em 1em !important;
 }
+
 
 .deck-container .slide h1 {
   color: rgb(30, 30, 30) !important;

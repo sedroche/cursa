@@ -334,7 +334,7 @@ def _pres_text_view(sections, css):
         visibility: visible !important;
     }}
 
-    body{{
+    html, body {{
         padding: 0em !important;
         margin: 0em !important;
         }}

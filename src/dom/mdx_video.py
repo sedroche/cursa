@@ -206,6 +206,11 @@ def object_element(url, width, height):
     param.set('value', 'sameDomain')
     obj.append(param)
 
+    param = markdown.util.etree.Element('param')
+    param.set('name', 'autoplay')
+    param.set('value', 'false')
+    obj.append(param)
+
     return obj
 
 
