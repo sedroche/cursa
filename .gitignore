@@ -15,4 +15,5 @@ cursa.spec~
 DATA/qt_menu.nib/
 DATA/qt_menu.nib/*
 cover/
-*~
+videos/*
+.*~
