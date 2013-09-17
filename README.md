@@ -1,6 +1,11 @@
 #Cursa static course generator
 ------------------------------------------
 
+##Project Page
+---------------
+See the [project page](http://sedero.github.io/cursa/) to find out more about cursa.
+
+
 ##Installation
 -------------
 
