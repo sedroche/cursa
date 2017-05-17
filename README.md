@@ -1,12 +1,12 @@
-#Cursa static course generator
+# Cursa static course generator
 ------------------------------------------
 
-##Project Page
+## Project Page
 ---------------
 See the [project page](http://sedero.github.io/cursa/) to find out more about cursa.
 
 
-##Installation
+## Installation
 -------------
 
 1. git clone https://github.com/sedero/cursa.git
@@ -43,7 +43,7 @@ See the [project page](http://sedero.github.io/cursa/) to find out more about cu
         $ chmod +x wkhtmltopdf
 
 
-##Tests
+## Tests
 ------
 
 1. Install nose
@@ -56,7 +56,7 @@ See the [project page](http://sedero.github.io/cursa/) to find out more about cu
 
         $ nosetests
 
-###To produce coverage reports
+### To produce coverage reports
 ------------------------------
 
 1. Install coverage.py
@@ -71,7 +71,7 @@ See the [project page](http://sedero.github.io/cursa/) to find out more about cu
 
    This will create a folder named cover within the directory that the command is entered, which will contain html coverage reports
 
-##Documentation
+## Documentation
 ----------------
 
 1. Install sphinx
